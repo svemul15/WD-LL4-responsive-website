@@ -1,0 +1,592 @@
+/* Modern, classy, and simple color palette and layout */
+
+/* Use a soft off-white background for the whole page */
+body {
+  background-color: #e6f4f1; /* soft blue-green */
+  font-family: 'Verdana', Arial, sans-serif; /* modern sans-serif font */
+  color: #174c43; /* deep green-blue for text */
+  margin: 0;
+  padding: 0;
+}
+
+/* Enables smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Decorative leaf/flower icon styles */
+.eco-icon {
+  width: 32px;
+  height: 32px;
+  vertical-align: middle;
+  margin: 0 6px 0 0;
+  filter: drop-shadow(0 1px 2px rgba(0,121,107,0.10));
+}
+
+/* Style for the header */
+header {
+  background-color: #c8e6e0; /* light green-blue for header */
+  box-shadow: 0 2px 8px rgba(23, 76, 67, 0.06); /* subtle shadow for depth */
+  padding: 18px 0;
+  background-image: url('eco-leaf.svg');
+  background-repeat: no-repeat;
+  background-position: left 24px top 12px;
+  background-size: 40px 40px;
+}
+
+/* Container for logo and navigation */
+/* Mobile-first: stack logo and nav vertically */
+.header-container {
+  width: 90%;
+  margin: 0 auto;
+  display: flex; /* use flexbox */
+  flex-direction: column; /* stack items vertically by default */
+  align-items: flex-start; /* align items to the left */
+  padding: 8px 0;
+}
+
+.logo {
+  font-size: 1.7em;
+  color: #00796b; /* teal green */
+  font-weight: 700;
+  text-decoration: none;
+  margin-bottom: 10px; /* space below logo on mobile */
+  letter-spacing: 1px;
+}
+
+@media (min-width: 701px) {
+  .header-container {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 8px 0;
+  }
+  .logo {
+    margin-bottom: 0;
+    margin-right: 36px;
+  }
+}
+
+/* Navigation styles */
+nav ul, .nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column; /* stack links vertically on mobile */
+  gap: 10px;
+  width: 100%;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #174c43; /* deep green-blue */
+  font-size: 1em;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: background 0.2s, color 0.2s;
+  display: block; /* make links fill the width on mobile */
+}
+
+nav ul li a:hover {
+  background-color: #b2dfdb; /* soft green-blue hover */
+  color: #00796b; /* teal green accent */
+}
+
+/* Hamburger menu styles for mobile */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: auto;
+  z-index: 20;
+}
+.nav-bar {
+  width: 28px;
+  height: 4px;
+  background: #00796b;
+  margin: 4px 0;
+  border-radius: 2px;
+  transition: 0.3s;
+  display: block;
+}
+
+/* Hide nav-list by default on mobile */
+.nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  background: #c8e6e0;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  right: 0;
+  padding: 18px 0 12px 0;
+  box-shadow: 0 4px 16px rgba(23,76,67,0.07);
+  border-radius: 0 0 16px 16px;
+  z-index: 10;
+  display: none;
+}
+
+.nav-list.nav-open {
+  display: flex;
+}
+
+@media (min-width: 701px) {
+  .nav-toggle {
+    display: none;
+  }
+  .nav-list, nav ul {
+    display: flex !important;
+    flex-direction: row;
+    position: static;
+    background: none;
+    box-shadow: none;
+    border-radius: 0;
+    padding: 0;
+    gap: 24px;
+    width: auto;
+  }
+}
+
+@media (max-width: 700px) {
+  nav {
+    width: 100%;
+    position: relative;
+  }
+  .nav-toggle {
+    display: flex;
+  }
+  .nav-list, nav ul {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    display: none;
+    position: absolute;
+    top: 56px;
+    left: 0;
+    right: 0;
+    background: #c8e6e0;
+    box-shadow: 0 4px 16px rgba(23,76,67,0.07);
+    border-radius: 0 0 16px 16px;
+    padding: 18px 0 12px 0;
+    z-index: 10;
+  }
+  .nav-list.nav-open, nav ul.nav-open {
+    display: flex;
+  }
+}
+
+/* Hero section styles */
+.hero {
+  /* Make the background image more visible by reducing overlay opacity */
+  background: linear-gradient(135deg, rgba(178,223,219,0.35) 0%, rgba(230,244,241,0.35) 100%), url('travel-world.jpg') center center/cover no-repeat;
+  height: 100vh; /* full viewport height */
+  display: flex; /* center content vertically and horizontally */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center; /* center the text */
+  position: relative;
+}
+
+/* Headline in the hero section (as a paragraph) */
+.hero-headline {
+  font-size: 2.8em; /* bigger headline */
+  color: #00796b; /* teal green */
+  margin-bottom: 18px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  z-index: 1;
+}
+
+.hero p {
+  font-size: 1.35em; /* bigger subheader */
+  color: #174c43;
+  margin: 0 0 8px 0;
+  max-width: 600px;
+  z-index: 1;
+}
+
+/* Destinations section styles */
+.destinations {
+  width: 92%;
+  margin: 36px auto 0 auto;
+  text-align: center;
+}
+
+.destinations-title {
+  font-size: 1.5em;
+  color: #00796b; /* teal green for section titles */
+  margin-bottom: 24px;
+  font-weight: 700;
+}
+
+.cards-container {
+  display: flex;
+  flex-direction: column; /* stack cards vertically on mobile */
+  gap: 24px;
+  align-items: center;
+  margin-top: -60px; /* move cards higher on the page */
+}
+
+.destination-card {
+  background: #f4fffd; /* very light green */
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(34,44,54,0.07);
+  padding: 18px 16px;
+  width: 100%;
+  max-width: 340px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 270px; /* reserve space for description to prevent page jump */
+}
+
+.destination-image {
+  width: 100%;
+  max-width: 300px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 14px;
+}
+
+.destination-name {
+  font-size: 1.2em;
+  color: #174c43; /* deep green-blue */
+  margin: 10px 0 6px 0;
+  font-weight: 600;
+}
+
+.destination-desc {
+  font-size: 1em;
+  color: #225e57; /* slightly deeper green-blue */
+  margin: 0;
+  opacity: 0; /* hide description by default */
+  max-height: 80px; /* reserve space for text, prevents layout shift */
+  overflow: hidden;
+  transition: opacity 0.3s;
+}
+
+.destination-card:hover .destination-desc {
+  opacity: 1; /* show description on hover */
+}
+
+@media (min-width: 700px) {
+  .cards-container {
+    flex-direction: row; /* cards in a row on desktop */
+    justify-content: center;
+    gap: 32px;
+    align-items: stretch;
+  }
+  .destination-card {
+    width: 100%;
+    max-width: 320px;
+  }
+}
+
+/* About section styles */
+.about {
+  width: 92%;
+  margin: 48px auto 0 auto;
+  text-align: center;
+}
+
+.about-title {
+  font-size: 1.5em;
+  color: #00796b; /* teal green for section titles */
+  margin-bottom: 24px;
+  font-weight: 700;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  background: #f4fffd; /* very light green */
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(34,44,54,0.07);
+  padding: 24px 16px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.about-image {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.about-description {
+  text-align: left;
+  max-width: 500px;
+}
+
+.about-description h3 {
+  margin-top: 0;
+  color: #00796b;
+  font-size: 1.2em;
+}
+
+.about-description p {
+  font-size: 1.1em;
+  color: #174c43;
+  margin: 10px 0 0 0;
+}
+
+@media (min-width: 700px) {
+  .about-content {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding: 32px 32px;
+  }
+  .about-image {
+    max-width: 350px;
+  }
+  .about-description {
+    max-width: 500px;
+  }
+}
+
+/* Call-to-Action Section Styles */
+.cta-section {
+  background: linear-gradient(90deg, #b2dfdb 0%, #e6f4f1 100%); /* green-blue gradient */
+  text-align: center;
+  padding: 40px 16px 32px 16px;
+  margin: 48px auto 0 auto;
+  border-radius: 14px;
+  max-width: 700px;
+  box-shadow: 0 2px 12px rgba(23, 76, 67, 0.07);
+}
+
+.cta-message {
+  font-size: 1.3em;
+  color: #174c43;
+  margin-bottom: 18px;
+  font-weight: 600;
+}
+
+.cta-button {
+  display: inline-block;
+  background: #00796b;
+  color: #fff;
+  font-size: 1.1em;
+  padding: 12px 32px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(23, 76, 67, 0.08);
+  letter-spacing: 0.5px;
+}
+
+.cta-button:hover {
+  background: #009688;
+  color: #e6f4f1;
+  box-shadow: 0 4px 16px rgba(23, 76, 67, 0.13);
+}
+
+/* Call-to-Action inside Hero Section */
+.cta-inside-hero {
+  margin-top: 32px;
+  background: rgba(178, 223, 219, 0.85); /* stronger green-blue overlay for more visibility */
+  padding: 28px 24px 24px 24px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(23, 76, 67, 0.13);
+  display: inline-block;
+  z-index: 1;
+  border: 2px solid #009688; /* add a border for emphasis */
+}
+
+.cta-inside-hero .cta-message {
+  font-size: 1.22em;
+  color: #00796b;
+  margin-bottom: 16px;
+  font-weight: 700;
+}
+
+.cta-inside-hero .cta-button {
+  display: inline-block;
+  background: #009688;
+  color: #fff;
+  font-size: 1.13em;
+  padding: 14px 36px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(23, 76, 67, 0.13);
+  letter-spacing: 0.5px;
+}
+
+.cta-inside-hero .cta-button:hover {
+  background: #00796b;
+  color: #e6f4f1;
+  box-shadow: 0 6px 20px rgba(23, 76, 67, 0.18);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  /* Lower overlay opacity for more visible image */
+  background: linear-gradient(135deg, rgba(178,223,219,0.35) 0%, rgba(230,244,241,0.35) 100%);
+  z-index: 0;
+}
+
+.hero *, .hero .cta-inside-hero {
+  position: relative;
+}
+
+/* Contact Section Styles */
+.contact {
+  width: 100%;
+  max-width: 1200px;
+  margin: 56px auto 0 auto;
+  text-align: center;
+  padding: 0 0 32px 0;
+}
+
+.contact-title {
+  font-size: 1.7em;
+  color: #00796b;
+  margin-bottom: 32px;
+  font-weight: 700;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 32px;
+  justify-content: center;
+  width: 100%;
+}
+
+.contact-bubble {
+  display: flex;
+  align-items: center;
+  background: #f4fffd;
+  border-radius: 32px;
+  box-shadow: 0 2px 12px rgba(34,44,54,0.07);
+  padding: 20px 32px;
+  gap: 24px;
+  min-width: 220px;
+  max-width: 100%;
+  margin: 0 auto;
+  transition: box-shadow 0.2s;
+  width: 100%;
+  justify-content: flex-start;
+}
+
+.contact-bubble:hover {
+  box-shadow: 0 4px 20px rgba(0,121,107,0.13);
+}
+
+.contact-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #b2dfdb;
+  background: #e6f4f1;
+  /* Removed padding for all icons */
+}
+
+/* Remove special object-fit and padding for phone/location icons */
+.contact-bubble img[alt="Phone Icon"],
+.contact-bubble img[alt="Location Icon"] {
+  object-fit: cover;
+  background: #e6f4f1;
+  /* No padding */
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.contact-label {
+  font-size: 1.1em;
+  color: #009688;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.contact-details a, .contact-details span {
+  font-size: 1.1em;
+  color: #174c43;
+  text-decoration: none;
+  word-break: break-all;
+}
+
+@media (min-width: 700px) {
+  .contact-info {
+    flex-direction: row;
+    gap: 40px;
+    width: 100%;
+  }
+  .contact-bubble {
+    max-width: 400px;
+    flex: 1 1 0;
+  }
+}
+
+footer {
+  background: #b2dfdb;
+  color: #174c43;
+  text-align: center;
+  padding: 24px 0 16px 0;
+  font-size: 1em;
+  margin-top: 48px;
+  letter-spacing: 0.5px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  box-shadow: none;
+  background-image: none;
+}
+footer p {
+  margin: 0;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+/* Responsive styles for small screens */
+@media (max-width: 600px) {
+  .header-container {
+    flex-direction: column; /* stack logo and nav vertically */
+    align-items: flex-start; /* align items to the left */
+  }
+  nav ul {
+    flex-direction: column; /* stack links vertically */
+    gap: 10px;
+    width: 100%;
+  }
+  .hero {
+    padding: 28px 0;
+    min-height: auto;
+    width: 98%;
+    margin: 18px auto 0 auto;
+    border-radius: 10px;
+  }
+  .hero-headline {
+    font-size: 1.3em;
+  }
+  .hero p {
+    font-size: 1em;
+  }
+}

@@ -4,13 +4,131 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>LiveLab 4 Demo</title>
+  <title>EcoTravel</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
-  Hello world
+  <!-- Header section with logo and navigation -->
+  <header>
+    <div class="header-container">
+      <!-- Website logo or name -->
+      <a href="#" class="logo">EcoTravel</a>
+      <!-- Navigation links -->
+      <nav>
+        <!-- Hamburger menu button for mobile -->
+        <button class="nav-toggle" aria-label="Open navigation menu">
+          <span class="nav-bar"></span>
+          <span class="nav-bar"></span>
+          <span class="nav-bar"></span>
+        </button>
+        <ul class="nav-list">
+          <li><a href="#destinations">Destinations</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero section with headline in a paragraph and gradient background -->
+  <section class="hero">
+    <!-- Headline for the hero section as a paragraph -->
+    <p class="hero-headline">Explore Sustainable Travel</p>
+    <!-- Subtext describing the mission -->
+    <p>Discover eco-friendly destinations and tips for responsible adventures.</p>
+    <!-- Call-to-Action inside hero section -->
+    <div class="cta-inside-hero">
+      <p class="cta-message">Ready to start your eco-friendly adventure?</p>
+      <a href="#" class="cta-button">Plan Your Trip</a>
+    </div>
+  </section>
+
+  <!-- Eco-friendly Destinations Section -->
+  <section class="destinations" id="destinations">
+    <h2 class="destinations-title">Destinations</h2>
+    <!-- Header above the cards -->
+    <h3 class="cards-header">Destinations</h3>
+    <div class="cards-container">
+      <!-- Card 1 -->
+      <div class="destination-card">
+        <img src="new zealand.webp" alt="New Zealand Nature" class="destination-image">
+        <h3 class="destination-name">New Zealand</h3>
+        <p class="destination-desc">Famous for its stunning landscapes and commitment to conservation, New Zealand is a
+          paradise for eco-travelers.</p>
+      </div>
+      <!-- Card 2 -->
+      <div class="destination-card">
+        <img src="costa rica.webp" alt="Costa Rica Rainforest" class="destination-image">
+        <h3 class="destination-name">Costa Rica</h3>
+        <p class="destination-desc">Costa Rica is a leader in sustainable tourism, offering lush rainforests, wildlife, and
+          eco-lodges.</p>
+      </div>
+      <!-- Card 3 -->
+      <div class="destination-card">
+        <img src="norway.webp" alt="Norway Fjords" class="destination-image">
+        <h3 class="destination-name">Norway</h3>
+        <p class="destination-desc">Explore Norway's breathtaking fjords and green cities, known for clean energy and
+          natural beauty.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about" id="about">
+    <h2 class="about-title">About EcoTravel</h2>
+    <div class="about-content">
+      <img src="eco.jpg" alt="EcoTravel Nature" class="about-image">
+      <div class="about-description">
+        <h3>Our Mission</h3>
+        <p>EcoTravel is dedicated to helping travelers discover the world in a sustainable and responsible way. We believe in protecting nature, supporting local communities, and making travel a force for good. Explore our site to find eco-friendly destinations, tips, and inspiration for your next adventure!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <h2 class="contact-title">Contact Us</h2>
+    <div class="contact-info">
+      <div class="contact-bubble">
+        <img src="email.jpg" alt="Email Icon" class="contact-icon">
+        <div class="contact-details">
+          <span class="contact-label">Email</span>
+          <a href="mailto:info@ecotravel.com">info@ecotravel.com</a>
+        </div>
+      </div>
+      <div class="contact-bubble">
+        <img src="phone.png" alt="Phone Icon" class="contact-icon">
+        <div class="contact-details">
+          <span class="contact-label">Phone</span>
+          <a href="tel:+1234567890">+1 (234) 567-890</a>
+        </div>
+      </div>
+      <div class="contact-bubble">
+        <img src="location.png" alt="Location Icon" class="contact-icon">
+        <div class="contact-details">
+          <span class="contact-label">Location</span>
+          <span>123 Greenway, Eco City</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer section -->
+  <footer>
+    <p>Thank you for exploring eco-friendly destinations with EcoTravel. Travel responsibly and make a difference!</p>
+  </footer>
+
   <script src="script.js"></script>
+  <script>
+    // Simple mobile nav toggle
+    const navToggle = document.querySelector('.nav-toggle');
+    const navList = document.querySelector('.nav-list');
+    navToggle.addEventListener('click', function() {
+      navList.classList.toggle('nav-open');
+      navToggle.classList.toggle('open');
+    });
+  </script>
 </body>
 
 </html>
